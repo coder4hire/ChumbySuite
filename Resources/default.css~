@@ -1,0 +1,37 @@
+QWidget
+{
+        background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                                      stop: 0 #404040, stop: 1 black);
+}
+
+QPushButton {
+    /* Let's make the size of the button 1,5 times of font size. */
+    min-height: 1.5em;
+    /* Font size just 1.*/
+    font: 1em;
+    /* Margins so that we get a little space on the left and right. */
+    margin: 0 1px 0 1px;
+    /* The font color */
+    color: white;
+    /* Here's the background gradient with start point, end point,
+       stop "percentage" and color, stop percentage and color. */
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #808080, stop: 1 #404040);
+    /* We'll round the borders. */
+    border-style: outset;
+    /* Round radius will be 3px */
+    border-radius: 3px;
+    /* Border is only one pixel */
+    border-width: 1px;
+    /* Border color is now set */
+    border-color: #606060;
+    padding: 0;
+}
+
+/* This is style when button is pressed */
+QPushButton:pressed {
+    /* We'll just invert the gradient by changing the colors around. */
+    padding: 2px 0 0 2px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #404040, stop: 1 #808080);
+}

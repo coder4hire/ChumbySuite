@@ -1,0 +1,48 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/Weather/Chance_Of_Showers.png</file>
+        <file>Resources/Weather/Clear.png</file>
+        <file>Resources/Weather/Cloudy.png</file>
+        <file>Resources/Weather/Cloudy_Period.png</file>
+        <file>Resources/Weather/Cloudy_With_Dizzle.png</file>
+        <file>Resources/Weather/Few_Flurries.png</file>
+        <file>Resources/Weather/Few_Flurries_Night.png</file>
+        <file>Resources/Weather/Few_Showers.png</file>
+        <file>Resources/Weather/Flurries.png</file>
+        <file>Resources/Weather/Fog.png</file>
+        <file>Resources/Weather/Freezing_Rain.png</file>
+        <file>Resources/Weather/Mostly_Cloudy.png</file>
+        <file>Resources/Weather/Mostly_Sunny.png</file>
+        <file>Resources/Weather/Rain.png</file>
+        <file>Resources/Weather/Rain_Or_Snow.png</file>
+        <file>Resources/Weather/Risk_Of_Thundershowers.png</file>
+        <file>Resources/Weather/Snow.png</file>
+        <file>Resources/Weather/Sunny.png</file>
+        <file>Resources/Weather/Thunder_Showers.png</file>
+        <file>Resources/Weather/Thunderstorms.png</file>
+        <file>Resources/Weather/Wet_Flurries.png</file>
+        <file>Resources/Weather/Wet_Flurries_Night.png</file>
+        <file>Resources/Cloud.png</file>
+        <file>Resources/Back1.jpg</file>
+        <file>Resources/EventsIcons/bell-icon.png</file>
+        <file>Resources/EventsIcons/radio-icon.png</file>
+        <file>Resources/EventsIcons/music-icon.png</file>
+        <file>Resources/EventsIcons/notes-icon.png</file>
+        <file>Resources/default.css</file>
+        <file>Resources/AlarmClock.png</file>
+        <file>Resources/Player/Stop.png</file>
+        <file>Resources/Player/REW.png</file>
+        <file>Resources/Player/Play.png</file>
+        <file>Resources/Player/Pause.png</file>
+        <file>Resources/Player/FF.png</file>
+        <file>Resources/Player/PlayerBack.png</file>
+        <file>Resources/Player/Shuffled.png</file>
+        <file>Resources/Player/NoShuffle.png</file>
+        <file>Resources/WidgetsIcons/CAlarmClockWidget.png</file>
+        <file>Resources/WidgetsIcons/CNightWidget.png</file>
+        <file>Resources/WidgetsIcons/CRadioWidget.png</file>
+        <file>Resources/WidgetsIcons/MP3 Player.png</file>
+        <file>Resources/WidgetsIcons/Web Browser.png</file>
+        <file>Resources/WidgetsIcons/Main Screen.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CScheduleViewAddEditDlg</class>
+ <widget class="QDialog" name="CScheduleViewAddEditDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>200</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="GBdAYS">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>301</width>
+     <height>85</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Days</string>
+   </property>
+   <widget class="QPushButton" name="btnSelectNone">
+    <property name="geometry">
+     <rect>
+      <x>245</x>
+      <y>50</y>
+      <width>48</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chMo">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>20</y>
+      <width>45</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>Mo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSelectAll">
+    <property name="geometry">
+     <rect>
+      <x>245</x>
+      <y>20</y>
+      <width>48</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>All</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chTu">
+    <property name="geometry">
+     <rect>
+      <x>57</x>
+      <y>20</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tu</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chWe">
+    <property name="geometry">
+     <rect>
+      <x>106</x>
+      <y>20</y>
+      <width>46</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>We</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chFr">
+    <property name="geometry">
+     <rect>
+      <x>204</x>
+      <y>20</y>
+      <width>46</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Fr</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chSa">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>45</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sa</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chSu">
+    <property name="geometry">
+     <rect>
+      <x>57</x>
+      <y>45</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Su</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chTh">
+    <property name="geometry">
+     <rect>
+      <x>155</x>
+      <y>20</y>
+      <width>47</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Th</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="teTime">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>39</y>
+     <width>36</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Time</string>
+   </property>
+  </widget>
+  <widget class="CKbdEditBox" name="edtMinutes">
+   <property name="geometry">
+    <rect>
+     <x>157</x>
+     <y>38</y>
+     <width>41</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Minutes</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbType">
+   <property name="geometry">
+    <rect>
+     <x>97</x>
+     <y>6</y>
+     <width>212</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Disabled</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Alarm</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Music</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Radio</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Silent Message</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblType">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>6</y>
+     <width>33</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Type</string>
+   </property>
+  </widget>
+  <widget class="CKbdEditBox" name="edtDescription">
+   <property name="geometry">
+    <rect>
+     <x>97</x>
+     <y>70</y>
+     <width>212</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Description</string>
+   </property>
+  </widget>
+  <widget class="CKbdEditBox" name="edtHours">
+   <property name="geometry">
+    <rect>
+     <x>97</x>
+     <y>38</y>
+     <width>41</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Hours</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblDescription">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Description</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblColon">
+   <property name="geometry">
+    <rect>
+     <x>145</x>
+     <y>42</y>
+     <width>10</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>:</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chkShowMsg">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>40</y>
+     <width>101</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string notr="true">Show Msg</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CKbdEditBox</class>
+   <extends>QLineEdit</extends>
+   <header>KbdEditBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CScheduleViewAddEditDlg</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CScheduleViewAddEditDlg</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

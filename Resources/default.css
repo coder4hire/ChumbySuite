@@ -1,0 +1,327 @@
+QDialog
+{
+    background: #202020;
+    font: 13px "Sans Serif";
+}
+
+QDialog *
+{
+    font: 13px "Sans Serif";
+}
+
+QPushButton
+{
+    /* Margins so that we get a little space on the left and right. */
+    margin: 0 1px 0 1px;
+    /* The font color */
+    color: white;
+    /* Here's the background gradient with start point, end point,
+       stop "percentage" and color, stop percentage and color. */
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #808080, stop: 1 #404040);
+    border-radius: 3px;
+    border: #606060 inset 10px;
+    padding: 0;
+    qproperty-focusPolicy: NoFocus;
+}
+
+/* This is style when button is pressed */
+QPushButton:pressed {
+    /* We'll just invert the gradient by changing the colors around. */
+    padding: 2px 0 0 2px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #404040, stop: 1 #808080);
+}
+
+QDialogButtonBox {
+    button-layout:0;
+/*    dialogbuttonbox-buttons-have-icons:1;*/
+    min-width:80px;
+}
+QDialogButtonBox QPushButton
+{
+    min-width:60px;
+    min-height:1.4em;
+}
+
+QTreeView {
+    background: black;
+    color: #E0E0E0;
+   alternate-background-color: #303030;
+}
+
+QTreeView::item {
+    background: black;
+}
+QTreeView::item:selected
+{
+     border: 1px solid #005050;
+     background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 #007070, stop: 1 #009090);
+ }
+
+QTreeView::branch{
+    background: black;
+    color:white;
+}
+
+QListView {
+   background-color: #303030;
+   color: #dddddd;
+}
+
+/*QTextEdit,CKbdEditBox,QTimeEdit,QDateEdit
+{
+   background-color: #717171;
+   border-radius: 3px;
+   border: #606060 inset 1px;
+   padding: 5px;
+   color: #dddddd;
+}*/
+
+CNumericKbd QLineEdit,CEnglishKbd QLineEdit
+{
+   background-color: #A0A0A8;
+   border-radius: 3px;
+   border: 1px solid #404040;
+   padding: 5px;
+   color: #000000;
+}
+
+
+QScrollBar:horizontal {
+   height: 20px;
+}
+QScrollBar:vertical {
+   width: 20px;
+}
+QTabWidget::pane {
+   border-top: 2px solid #C2C7CB;
+}
+
+QGroupBox
+{
+    color:white;
+    border:1px solid #B0B0B0;
+    border-radius: 3px;
+    margin-top: 1ex;
+    margin-left: 1px
+}
+
+QGroupBox::title
+{
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* position at the top center */
+    padding: 0 3px 0 3px;
+    left: 10px;
+}
+
+.QLabel {
+   padding:0;
+   color: white;
+}
+
+QCheckBox {
+   color: white;
+}
+
+QCheckBox::indicator
+{
+    background-color:none;
+    color: white;
+}
+
+.QRadioButton{
+   color:white;
+}
+
+/* Styles for my classes */
+CWidgetBase *
+{
+    font: 13px "Sans Serif";
+}
+
+CWidgetBase
+{
+   background: #202020;
+   color: #dddddd;
+}
+
+CNightWidget{
+   background: #000000;
+   color: #606060;
+}
+
+CAlarmMessageDlg
+{
+    border: 2px solid gray;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 rgba(240,240,255,208), stop: 1 rgba(200,200,210,208));
+}
+
+CAlarmMessageDlg .QLabel
+{
+    color:black;
+}
+
+/* Keyboards */
+CEnglishKbd,CNumericKbd
+{
+    /*background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0, y2:0.295, stop:0.0136364 #505060, stop:0.818182 #707080);*/
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop:0 #505060, stop:1 #707080);
+}
+
+CEnglishKbd QPushButton,CNumericKbd QPushButton
+{
+    /*background-color: qlineargradient(spread:reflect, x1:0, y1:1, x2:0, y2:0.295, stop:0.0136364 #606060, stop:0.818182 #505050);*/
+    background-color: #303030;
+    /* We'll round the borders. */
+    border-style: outset;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: #202020;
+    font-weight:bold;
+    padding: 0;
+}
+
+CEnglishKbd QPushButton:pressed ,CNumericKbd QPushButton:pressed
+{
+   background-color: #404040;
+   padding: 0;
+}
+
+CEnglishKbd #btnSym
+{
+    color:#5050FF;
+}
+
+CEnglishKbd #btnClear,CNumericKbd #btnClear
+{
+    color:#F03030;
+}
+CEnglishKbd #btnClose,CNumericKbd #btnClose
+{
+    color:#00D000;
+}
+
+CScheduleView
+{
+    background-color:none;
+    background-image: url(":/Resources/AlarmClock.png");
+    background-attachment: fixed;
+    background-position: bottom right;
+    background-repeat:no-repeat;
+}
+
+CScheduleView::item
+{
+    font: 13px "Sans Serif";
+    height:2.2em;
+}
+
+CConfigDlg #lblDate,CConfigDlg #lblTime,CConfigDlg #editDate,CConfigDlg #editTime
+{
+    font-size: 25px;
+}
+
+/*--- Player ---------------------------------------------------*/
+QFrame#playerControls
+{
+    background-color: rgba(32,32,32,200);
+    border-radius: 3px;
+    border: 1px solid #505050;
+}
+
+CMP3Widget
+{
+    background:repeat-xy url(":/Resources/Player/PlayerBack.png");
+}
+
+QPushButton#btnPlay, QPushButton#btnPrev, QPushButton#btnNext,
+QPushButton#btnStop, QPushButton#btnPause, QPushButton#btnShuffle
+{
+    margin:0 1px 1px 0;
+    border: 1px outset #505050;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #606070, stop: 1 #303040);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+
+QPushButton#btnPlay
+{
+    background-image:url(":/Resources/Player/Play.png");
+}
+
+QPushButton#btnPrev
+{
+    background-image:url(":/Resources/Player/REW.png");
+}
+
+QPushButton#btnNext
+{
+    background-image:url(":/Resources/Player/FF.png");
+}
+
+QPushButton#btnStop
+{
+    background-image:url(":/Resources/Player/Stop.png");
+}
+
+QPushButton#btnPause
+{
+    background-image:url(":/Resources/Player/Pause.png");
+}
+
+QPushButton#btnShuffle
+{
+    background-image:url(":/Resources/Player/NoShuffle.png");
+}
+
+QPushButton#btnShuffle:checked
+{
+    background-image:url(":/Resources/Player/Shuffled.png");
+}
+
+QPushButton#btnPlay:pressed, QPushButton#btnPrev:pressed, QPushButton#btnNext:pressed,
+QPushButton#btnStop:pressed, QPushButton#btnPause:pressed,QPushButton#btnShuffle:pressed
+{
+    margin: 1px 0 0 1px;
+}
+
+/*--- Tabs ----------------------------------------------------------*/
+
+ QTabWidget::pane { /* The tab widget frame */
+     border-top: 2px solid #A0A0A0;
+ }
+
+ QTabWidget::tab-bar
+ {
+     left: 0px; /* move to the right by 5px */
+     top:4px;
+     bottom:2px;
+ }
+
+ /* Style the tab using the tab sub-control. Note that
+     it reads QTabBar _not_ QTabWidget */
+ QTabBar::tab
+ {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #888888, stop: 1.0 #606060);
+     border: 1px solid #A0A0A0;
+     border-bottom: 2px solid #A0A0A0;;
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
+     min-width: 8px;
+     padding: 3px;
+     margin-bottom:2px;
+ }
+
+ QTabBar::tab:selected
+ {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #606060, stop: 1.0 #202020);
+     border: 1px solid #707070;
+     border-bottom: 0;
+     color: white;
+ }

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CConfigMainWindow</class>
+ <widget class="QWidget" name="CConfigMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>317</width>
+    <height>177</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="chkSlideShow">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>3</y>
+     <width>311</width>
+     <height>104</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Slide Show</string>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <widget class="QLabel" name="picturesFolderLabel">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>20</y>
+      <width>110</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pictures Folder</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editPicturesFolder">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>151</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnBrowse">
+    <property name="geometry">
+     <rect>
+      <x>274</x>
+      <y>20</y>
+      <width>31</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::NoArrow</enum>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkRandom">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>80</y>
+      <width>111</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Randomize</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="delayLabel">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>50</y>
+      <width>110</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delay (minutes)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editDelay">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>50</y>
+      <width>51</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnDelayMinus">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>50</y>
+      <width>31</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::NoArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="btnDelayPlus">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>50</y>
+      <width>31</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::NoArrow</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="chkWeather">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>116</y>
+     <width>311</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Weather</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <widget class="QLabel" name="lblLocation">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>20</y>
+      <width>103</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Location</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editLocation">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>20</y>
+      <width>191</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
