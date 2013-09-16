@@ -1,0 +1,43 @@
+#!/bin/sh
+killall chumbyflashplayer.x
+killall chumbalarmd
+/usr/chumby/scripts/stop_control_panel
+/usr/bin/imgtool --fb=0 /mnt/usb/logo.jpg
+/usr/bin/fbwrite "Starting..."
+
+export TSLIB_TSDEVICE=/dev/input/event1
+export TSLIB_FBDEVICE=/dev/fb0
+export TSLIB_PLUGINDIR=/mnt/usb/lib/ts
+export TSLIB_CONSOLEDEVICE=none
+export TSLIB_CONFFILE=/mnt/usb/etc/ts.conf
+export TSLIB_CALIBFILE=/mnt/usb/etc/pointercal
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/usb/lib
+export POINTERCAL_FILE=/mnt/usb/etc/pointercal
+export QWS_MOUSE_PROTO=Tslib:/dev/input/event1
+export QWS_KEYBOARD=none
+export QT_QWS_FONTDIR=/mnt/usb/lib/fonts
+
+#stop_control_panel
+/usr/chumby/scripts/switch_fb.sh 0
+/mnt/usb/switch_output -l
+
+rem ifconfig wlan0 192.168.2.200
+
+#service_control sshd start
+/usr/chumby/scripts/start_sshd.sh
+
+if [ ! -e /mnt/usb/etc/pointercal ]; then
+    /mnt/usb/bin/ts_calibrate
+    sync
+fi
+
+#Enabling audio
+enable_audio.sh
+
+# Starting btplay
+btplay --start-daemon --output=alsa:plug:dmixer 
+
+killall rcS.background
+cd /mnt/usb/bin
+./ChumbySuite -qws
+

@@ -1,0 +1,109 @@
+#!/bin/sh
+# scross@chumby.com
+
+# Bits and pieces of /etc/init.d/rcS.background
+
+# For the recovery partition, use a default series of touchscreen settings.
+# For the regular partition, restore the backup if it exists.
+if [ "x${IS_RECOVERY}" = "x1" ]
+then
+    cp /psp/ts_hid_settings /psp/ts_hid_settings_backup
+    echo -n "124,3874,3947,-3746,0" > /psp/ts_hid_settings
+elif [ -e /psp/ts_hid_settings_backup ]
+then
+    mv /psp/ts_hid_settings_backup /psp/ts_hid_settings
+fi
+
+
+# If /psp is missing files, attempt to "heal" it.
+if [ ! -e /psp/ts_hid_settings -o ! -e /psp/asound.conf ]
+then
+    echo "Recovering /psp"
+    cd /
+    tar xzf /usr/share/defaults/psp.tar.gz
+fi
+
+
+# Mount the USB partition, which should be available now that USB is loaded.
+mount /proc/bus/usb
+
+cp /psp/network_config /mnt/usb/1/
+
+
+# Load the i2c interface.  This will enable the dcid query program to talk to
+# the dcid eeprom.
+modprobe i2c-dev
+modprobe i2c-stmp378x
+
+
+
+
+# Bring audio up, then run the opening movie.  A working audio driver is
+# required for flashplayer to animate at the correct speed.  Also bring up the
+# timer driver, which will prevent flashplayer from crashing when the time
+# gets set below, because it thinks the script is stuck.
+enable_audio.sh
+enable_timer.sh
+
+# Begin loading the FM radio driver.  This will, by default,
+# initialize the FM radio and perform a scan of available stations.
+# service_control chumbradiod start
+
+# Set up the rotary coder, which is present on some units.
+modprobe stmp3xxx_rotdec
+
+
+# Start the accelerometer daemon.
+acceld &
+
+
+# Start cpid in daemon mode
+/usr/bin/cpid -d
+
+
+
+# Assign the hostname.  Generate a default one if one doesn't exist.
+if [ -e /psp/hostname ]
+then
+    cat /psp/hostname > /proc/sys/kernel/hostname
+    HOSTNAME="$(hostname)"
+fi
+if [ ! -e /psp/hostname -o "${HOSTNAME}" = "chumby" -o "${HOSTNAME}" = "(none)" ]
+then
+    HOSTNAME=chumby-$(ifconfig wlan0 | grep HWaddr | awk '{print $5}' | cut -d':' -f4,5,6 | tr ':' '-' | tr A-Z a-z )
+    echo "${HOSTNAME}" > /psp/hostname
+    echo "Creating default hostname: ${HOSTNAME}"
+fi
+cat /psp/hostname > /proc/sys/kernel/hostname
+
+
+
+
+# Bring up the "local" network interface.  Other network interfaces will
+# be brought up as their devices are discovered via udev events.
+ifconfig lo 127.0.0.1 &
+
+# Start the network if we have a network config script.
+[ -e /mnt/usb/network_config ] && cp /mnt/usb/network_config /psp
+[ -e /psp/network_config ] && start_network
+
+# Wait for start_network to complete.
+WAIT_COUNTER=0
+while [ $(ps | grep start_network | grep -v grep | wc -l) -gt 0 -a ${WAIT_COUNTER} -lt 10 ]
+do
+    WAIT_COUNTER=$(expr ${WAIT_COUNTER} + 1)
+    sleep 1
+done
+
+
+
+# run any scripts for debug configuration of chumby from a USB thumb drive
+if [ -x /mnt/usb/userhook1 ]; then
+    /mnt/usb/userhook1
+fi
+# run any scripts for debug configuration of chumby from /psp
+#if [ -x /psp/rfs1/userhook1 ]; then
+#    /psp/rfs1/userhook1
+#fi
+    
+
